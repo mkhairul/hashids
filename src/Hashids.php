@@ -397,12 +397,12 @@ class Hashids implements HashidsInterface
      */
     protected function getMathExtension(): MathInterface
     {
+		if (function_exists('bcscale') {
+            return new Bc();
+        }
+		
         if (\extension_loaded('gmp')) {
             return new Gmp();
-        }
-
-        if (\extension_loaded('bcmath')) {
-            return new Bc();
         }
 
         throw new RuntimeException('Missing BC Math or GMP extension.');
