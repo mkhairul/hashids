@@ -397,7 +397,7 @@ class Hashids implements HashidsInterface
      */
     protected function getMathExtension(): MathInterface
     {
-		if (function_exists('bcscale') {
+		if (function_exists('bcscale')) {
             return new Bc();
         }
 		
